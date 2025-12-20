@@ -1,0 +1,65 @@
+ 
+
+
+// Q : Write a C++ program that stores employees’ data using
+//     a dynamically allocated array of objects.
+
+
+
+#include <iostream>
+#include <string>
+using namespace std ;
+
+
+class Employees {
+    
+    public :
+
+    int id , age ;
+    string name , department;
+    
+    
+ 
+};
+
+int main () {
+    
+    
+    cout << "Enter the size of the Employees : " ;
+    int size  = 0 ;
+    cin >> size;
+    Employees *empArr = new Employees [size];
+
+    
+    for ( int i=0; i< size ; i++){
+        
+        cout << " Enter the ID for Employee Number : " << i+1 << endl;
+        cin >> empArr[i].id;
+        cout << " Enter the name : " << endl;
+        cin >> ws;
+        getline(cin,empArr[i].name);
+        cout << " Enter the department : " << endl;
+        cin >> ws;
+        getline(cin ,empArr[i].department);
+        cout << " Enter the age : " << endl;
+        cin >> empArr[i].age;
+        cout << endl;
+        
+    }
+    
+    for (int i= 0 ; i<size ; i++){
+        
+        cout << "======= EMPLOYEE INFO =========" << endl;
+        cout << " ID : " << empArr[i].id << endl;;
+        cout << " NAME : " << empArr[i].name<< endl;;
+        cout << " DEPARTMENT : " <<empArr[i].department<< endl;
+        cout << " AGE : " << empArr[i].age << endl;
+        
+    }
+    
+    delete[] empArr;
+    
+    return 0;
+    
+    
+}
